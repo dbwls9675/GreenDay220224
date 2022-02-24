@@ -20,26 +20,21 @@
 				<th>수량</th>
 			</tr>
 			<%
-				
-				ArrayList<ProductDto> pList = (ArrayList) request.getAttribute("pList");
-				for(int i = 0;i<pList.size();i++){
-					ProductDto product = pList.get(i);
-			
+			ArrayList<ProductDto> pList = (ArrayList<ProductDto>)request.getAttribute("pList");
+			for (int i = 0; i < pList.size(); i++) {
+				ProductDto dto = pList.get(i);
 			%>
 
 			<tr>
-				<td><%=product.getNo()%></td>
-				<td><a href="product_detail.do?no=<%=product.getNo()%>"><%=product.getpName()%></a></td>
-				<td><%=product.getPrice()%></td>
-				<td><%=product.getEa()%></td>
+				<td><%=dto.getNo()%></td>
+				<td><a href="product_detail.do?no=<%=dto.getNo()%>"><%=dto.getpName()%></a></td>
+				<td><%=dto.getPrice()%></td>
+				<td><%=dto.getEa()%></td>
 			</tr>
 			<%
 			}
 			%>
 		</table>
 	</form>
-
-
-
 </body>
 </html>

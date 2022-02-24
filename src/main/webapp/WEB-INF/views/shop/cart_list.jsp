@@ -27,10 +27,9 @@
 			<th>수량</th>
 		</tr>
 		<%
-			ArrayList<ProductDto> carList = (ArrayList) session.getAttribute("carList");
-			for(int i = 0;i<carList.size();i++){
-				ProductDto dto = carList.get(i);
-		
+		ArrayList<ProductDto> carList = (ArrayList<ProductDto>)session.getAttribute("cartList");
+		for(int i = 0;i<carList.size();i++){
+			ProductDto dto = carList.get(i);
 		%>
 		<tr>
 			<td><%=dto.getNo()%></td>
